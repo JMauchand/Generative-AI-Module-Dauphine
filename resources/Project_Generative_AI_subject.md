@@ -67,15 +67,17 @@ https://docs.google.com/spreadsheets/d/1Bq_fIELFZWANblbx1UL3CM1rpgHX-mx_8yABH-mY
 
 4. Fork the course repository into your GitHub account
 
-Link : https://github.com/End2EndAI/Generative-AI-Module-Dauphine
+Course repository to fork : https://github.com/End2EndAI/Generative-AI-Module-Dauphine
 
 Click on the `Fork` button on the page above, while being connected to your GitHub account.
 
 5. Clone the repository on your laptop
 
-You should have git installed on your laptop. Go to a folder and use the command `SHIFT + Right click`. Click on `Git Bash Here`.
+You should have git installed on your laptop. Go to a folder and use the command `SHIFT + Right click`. Click on `Git Bash Here` (If it doesn't appear, just open the program `Git Bash` and go to the folder where you want to clone the repository).
 
-In the opened terminal, use the following command to clone the repository : `git clone https://github.com/End2EndAI/Generative-AI-Module-Dauphine.git` 
+In the opened terminal, use the following command to clone the repository : `git clone <YOUR_FORKED_REPOSITORY_URL>`. 
+
+To get the `<YOUR_FORKED_REPOSITORY_URL>`, go into your forked repository, and click on `<> Code` and copy the HTTPS Web URL.
 
 6. Open VSCode and open the repository
 
@@ -89,7 +91,7 @@ Click on `Help`, `Show All Commands`. Type `Python: Select Interpreter` and choo
 
 Open the files `notebooks\getting_started.ipynb` and `test_flask_app.py`, and run them, to see if everything is well configured.
 
-10. Check the data
+10. Check the data with the notebook `notebooks\getting_started.ipynb`
 
 Use the sample data first `data\twitter_data_clean_sample.csv`. 
 
@@ -100,13 +102,15 @@ Use the sample data first `data\twitter_data_clean_sample.csv`.
 
 ## Suggestion of the way of work
 
-- Start with comprehending the data using the sample file and establishing a clear objective for your application.
+- Start with comprehending the data using the sample file and establishing a clear objective for your application, and how your application will look like / work.
 
-- Initially, construct a basic prototype of the front-end interface, utilizing ChatGPT for this purpose. 
+- Initially, construct a basic prototype of the front-end interface, utilizing ChatGPT for this purpose. I suggest to use HTML, CSS and JS for simplicity, but you are welcome to use more advanced frameworks.
 
-- Once the primary features of the front-end are operational, proceed to develop a straightforward Flask back-end. This could start as simply as returning the input message. Ensure the Flask server is operational and effectively communicating with the front-end.
+- Once the primary features of the front-end are operational, proceed to develop a straightforward Flask back-end. This could start as simply as returning the input message. Ensure the Flask server is operational and effectively communicating with the front-end. Understand how the connection works between the front-end and the back-end. Experiment by modifying the front, then the back, ...
 
 - Next, enhance the Flask back-end by integrating the Retrieval-Augmented Generation (RAG) system. Start by utilizing the provided sample file `twitter_data_clean_sample.csv` to enable the system to identify and respond with the most relevant tweet, using GPT-generated answers. Initially, employ an Excel file for storing embeddings, progressing later to a more sophisticated vector database solution, such as ChromaDB.
+
+You can use the link in the `Resources` section below for the RAG tutorial from OpenAI.
 
 #### Please only use the following models from OpenAI (the other models, especially GPT-4, are too expensive and will result in consuming all the API Credit):
 

@@ -2,7 +2,7 @@
 
 #### 0. Install Git
 - **Download**: Go to the [Git website](https://git-scm.com/) and download the installer for your operating system.
-- **Install**: Run the installer and follow the on-screen instructions. Use the default configuration from the installation tool.
+- **Install**: Run the installer and follow the on-screen instructions. Be aware to check the option "Add Git to PATH".
 
 #### 1. Install Visual Studio Code (VS Code)
 - **Download**: Go to the [VS Code website](https://code.visualstudio.com/) and download the installer for your operating system.
@@ -27,12 +27,11 @@
      conda activate flask_env
      ```
 
-#### 4. Install Required Libraries
-- **Pandas, Numpy, Flask, OpenAI, and ChromeDB**:
-  - In the virtual environment, run:
-    ```bash
-    pip install pandas numpy flask openai chromadb jupyter ipykernel
-    ```
+#### 4. Install Required Libraries in the virtual env
+- In the virtual environment, run:
+ ```bash
+ pip install pandas numpy flask openai chromadb jupyter ipykernel
+ ```
 
 #### 5. Install plugins in VS Code
 - **Install Python Plugin**:
@@ -46,7 +45,7 @@
 
 
 #### 6. Verify Installation
-- Create a simple Jupyter notebook in VS Code in folder `notebooks` and try creating a jupyter notebook (`test_noteobok_env.ipynb`)
+- Create a simple Jupyter notebook in VS Code in folder `notebooks` and try creating a jupyter notebook (`test_notebook_env.ipynb`)
 - Click on the top right `Select kernel`, select `flask_env` as a kernel
 - Import Flask, Pandas, OpenAI etc., to ensure everything is installed correctly.
 
@@ -54,7 +53,7 @@
 - **Select `flask_env` as python interpreter**
   - Use the Python: Select Interpreter command from the Command Palette (Ctrl+Shift+P).
   - Select `flask_env`
-- **Create a New Python File** (e.g., `test_flak_app.py`) in the `src` folder.
+- **Create a New Python File** (e.g., `test_flask_app.py`) in the root `/` folder.
 - **Write a Basic Flask App**:
   ```python
   from flask import Flask
