@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IASD V - ChatBot</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TRS</h1>
+    <p>Welcome to your Tweeter Reply Supplier!</p>
+    <!-- Add your HTML elements and forms here -->
+    <label for="in_Tweet">Please enter your Tweet:</label>
+    <input type="text" id="in_Tweet" name="in_Tweet"><br><br>
+
+    
+    <button onclick="getBestAnswer()">Get best answer...</button>
+
+    <!--<label for="out_Tweet_Answer">Best tweet answer:</label>
+    <input type="text" id="out_Tweet_Answer" name="out_Tweet_Answer"><br><br>-->
+
+    <div id="trsAnswer"></div>
+
+    <script>
+        function getBestAnswer() {
+            var l_Tweet = document.getElementById('in_Tweet').value;
+
+            fetch(`/get_best_answer?in_Tweet=${l_Tweet}`)
+                .then(response => response.json())
+                .then(data => {
+                    var details = `<p>Input Tweet: ${data.initial}</p>`
+                    document.getElementById('trsAnswer').innerHTML = details;
+                })
+                .catch(error => console.error('Error:', error));
+
+            
+            /* var destinationAddress = document.getElementById('destination_address').value;
+
+            fetch(`/get_car?departure_address=${departureAddress}&destination_address=${destinationAddress}`)
+                .then(response => response.json())
+                .then(data => {
+                    var details = `<p>Type of Car: ${data.type_of_car}</p>
+                                   <p>Price: $${data.price}</p>
+                                   <p>GPS Coordinates: lat. ${data.gps_coordinates.lat} long. ${data.gps_coordinates.long}</p>`
+                    document.getElementById('rideDetails').innerHTML = details;
+                })
+                .catch(error => console.error('Error:', error));*/
+        }
+    </script>
+</div>
+
+</body>
+
+</html>
